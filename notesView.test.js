@@ -24,6 +24,13 @@ describe('Notes view', () => {
   it('adds a note from user input', () => {
     input.value = "Hello pp";
     button.click();
-    expect(document.querySelectorAll('div.note')[4].innerText).toEqual('Hello pp');
+    expect(document.querySelectorAll('div.note')[2].innerText).toEqual('Hello pp');
+  })
+
+  it('displays the right number of notes', () => {
+    model.addNote('hi hi again')
+    view.displayNotes()
+    view.displayNotes()
+    expect(document.querySelectorAll('div.note').length).toBe(4);
   })
 })
